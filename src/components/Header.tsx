@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
-        {/* Logo */}
+        {/* Logo FASTDENTAL */}
         <Link href="/" className="flex items-center">
           <Image 
             src="/Logo.png" 
@@ -17,7 +17,7 @@ export default function Header() {
           />
         </Link>
 
-        {/* Menú Nav */}
+        {/* Navegación entre secciones */}
         <nav className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
           <Link href="/" className="hover:text-brand-mint transition-colors">
             Inicio
@@ -33,7 +33,7 @@ export default function Header() {
           </Link>
         </nav>
 
-        {/* Botón de Llamada */}
+        {/* Botón Llamar Ahora */}
         <div>
           <a 
             href="tel:658312752" 

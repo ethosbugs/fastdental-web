@@ -5,21 +5,21 @@ export default function Footer() {
   return (
     <footer className="bg-brand-dark text-white py-12 border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Identidad */}
+        {/* Identidad / Logo */}
         <div className="flex flex-col justify-start">
           <Image 
             src="/Logo.png" 
             alt="FASTDENTAL Logo" 
-            width={240} 
-            height={70} 
-            className="h-16 w-auto object-contain mb-3 brightness-0 invert self-start" 
+            width={220} 
+            height={60} 
+            className="h-14 w-auto object-contain mb-3 brightness-0 invert self-start" 
           />
           <p className="text-sm text-gray-300 font-medium">
             Servicio Técnico Oficial de Aparatología Dental
           </p>
         </div>
 
-        {/* Navegación */}
+        {/* Navegación entre secciones */}
         <div>
           <h4 className="font-bold text-brand-mint text-lg mb-4">Navegación</h4>
           <ul className="space-y-2.5 text-sm text-gray-200 font-medium">
