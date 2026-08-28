@@ -40,11 +40,11 @@ export default function Header() {
             className="bg-brand-mint text-white px-5 py-2.5 rounded-full font-bold flex items-center gap-2 hover:opacity-90 transition-opacity text-sm tracking-wide"
           >
             <Image 
-              src="https://i.pinimg.com/736x/84/4e/8c/844e8c1dd3746e507203b87961f77d3f.jpg" 
+              src="https://i.ibb.co/T6sX4zx/455705.png" 
               alt="Teléfono" 
               width={20} 
               height={20} 
-              className="w-5 h-5 rounded-full object-cover" 
+              className="w-5 h-5 object-contain brightness-0 invert" 
             />
             LLAMAR AHORA
           </a>
