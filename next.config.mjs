@@ -26,6 +26,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'www.dynamiquedentaire.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'i.pinimg.com',
+      },
     ],
   },
 };
