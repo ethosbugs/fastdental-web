@@ -15,7 +15,7 @@ export default function Contacto() {
         <div className="bg-brand-light p-8 rounded-2xl flex flex-col justify-between">
           <div>
             <div className="mb-8 flex justify-center">
-              <Image src="/Logo.png" alt="FASTDENTAL Logo" width={240} height={70} className="h-20 w-auto object-contain" />
+              <Image src="/Logo.png" alt="FASTDENTAL Logo" width={360} height={105} className="h-32 w-auto object-contain" />
             </div>
             <div className="space-y-6">
               <div>
@@ -34,7 +34,7 @@ export default function Contacto() {
               </div>
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <Image src="https://cdn-icons-png.flaticon.com/512/880/88036.png" alt="Horario" width={16} height={16} className="w-4 h-4 object-contain" />
+                  <Image src="https://cdn-icons-png.flaticon.com/512/88/88036.png" alt="Horario" width={16} height={16} className="w-4 h-4 object-contain" />
                   <p className="font-bold text-xs text-brand-mint uppercase tracking-wider">Horario de Atención</p>
                 </div>
                 <p className="text-xl font-bold text-brand-dark">De 9:00 h a 20:00 h</p>

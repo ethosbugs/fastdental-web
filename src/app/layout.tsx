@@ -1,12 +1,14 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import type { Metadata } from 'next';
+import './globals.css';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: "FASTDENTAL — Servicio Técnico Oficial de Aparatología Dental",
-  description: "Reparación, mantenimiento y puesta a punto de tu clínica dental en la Comarca de la Selva. Rapidez, repuestos originales y garantía de fabricante.",
+  title: 'FASTDENTAL — Servicio Técnico Oficial Dental',
+  description: 'Reparación y mantenimiento integral de aparatología dental.',
+  icons: {
+    icon: '/Logo.png',
+  },
 };
 
 export default function RootLayout({
@@ -16,13 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className="antialiased min-h-screen flex flex-col justify-between">
-        <div>
-          <Header />
-          {children}
-        </div>
+      <body className="antialiased text-gray-800 bg-white">
+        <Header />
+        {children}
         <Footer />
-        <WhatsAppButton />
       </body>
     </html>
   );

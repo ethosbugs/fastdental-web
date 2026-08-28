@@ -9,9 +9,9 @@ export default function Footer() {
           <Image 
             src="/Logo.png" 
             alt="FASTDENTAL" 
-            width={240} 
-            height={70} 
-            className="h-16 w-auto brightness-200 contrast-200 mb-4 object-contain" 
+            width={320} 
+            height={90} 
+            className="h-24 w-auto brightness-200 contrast-200 mb-4 object-contain" 
           />
           <p className="text-gray-300 text-sm">Servicio Técnico Oficial de Aparatología Dental</p>
         </div>
@@ -41,7 +41,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-gray-700 text-center pt-6 text-xs text-gray-400">
-        © 2026 FASTDENTAL — Francisco Agüera Gómez. Todos los derechos reservados.[cite: 2]
+        © 2026 FASTDENTAL — Francisco Agüera Gómez. Todos los derechos reservados.
       </div>
     </footer>
   );
