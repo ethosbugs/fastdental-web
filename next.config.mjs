@@ -8,10 +8,6 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'www.freeiconspng.com',
-      },
-      {
-        protocol: 'https',
         hostname: 'encrypted-tbn0.gstatic.com',
       },
       {

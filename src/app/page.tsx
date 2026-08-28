@@ -32,7 +32,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="bg-[#25D366] text-white px-8 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
             >
-              <Image src="https://www.freeiconspng.com/uploads/whatsapp-icon-png-13.png" alt="WhatsApp" width={32} height={32} className="w-8 h-8 object-contain" />
+              <Image src="https://i.ibb.co/B2NVwLtG/Captura-de-pantalla-2026-08-28-224241.png" alt="WhatsApp" width={32} height={32} className="w-8 h-8 object-contain" />
               Escribir por WhatsApp
             </a>
             <a 
@@ -209,7 +209,7 @@ export default function Home() {
           <p className="mb-8 text-lg">Contacta ahora y te confirmamos disponibilidad en el mismo día.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a href="https://wa.me/34658312752" className="bg-[#25D366] text-white px-8 py-4 rounded-xl font-bold text-lg hover:opacity-90 flex items-center justify-center gap-2">
-              <Image src="https://www.freeiconspng.com/uploads/whatsapp-icon-png-13.png" alt="WhatsApp" width={32} height={32} className="w-8 h-8 object-contain" />
+              <Image src="https://i.ibb.co/B2NVwLtG/Captura-de-pantalla-2026-08-28-224241.png" alt="WhatsApp" width={32} height={32} className="w-8 h-8 object-contain" />
               Escribir por WhatsApp
             </a>
             <Link href="/contacto" className="bg-white text-brand-dark px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 flex items-center justify-center gap-2">
