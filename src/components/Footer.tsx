@@ -1,0 +1,33 @@
+import Link from 'next/link';
+import Image from 'next/image';
+
+export default function Footer() {
+  return (
+    <footer className="bg-brand-dark text-white pt-12 pb-6">
+      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <Image src="/Logo.png" alt="FASTDENTAL" width={160} height={40} className="h-10 w-auto brightness-200 contrast-200 mb-4" />
+          <p className="text-gray-300 text-sm">Servicio Técnico Oficial de Aparatología Dental</p>
+        </div>
+        <div>
+          <h4 className="font-bold text-lg mb-4 text-brand-mint">Navegación</h4>
+          <ul className="space-y-2 text-sm text-gray-300">
+            <li><Link href="/" className="hover:text-white">Inicio</Link></li>
+            <li><Link href="/servicios" className="hover:text-white">Servicios</Link></li>
+            <li><Link href="/marcas" className="hover:text-white">Marcas</Link></li>
+            <li><Link href="/contacto" className="hover:text-white">Contacto</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-bold text-lg mb-4 text-brand-mint">Contacto Directo</h4>
+          <p className="text-sm text-gray-300">📱 658 312 752</p>
+          <p className="text-sm text-gray-300">✉️ sat.fastdental@gmail.com</p>
+          <p className="text-sm text-gray-300">📍 Comarca de la Selva</p>
+        </div>
+      </div>
+      <div className="border-t border-gray-700 text-center pt-6 text-xs text-gray-400">
+        © 2026 FASTDENTAL — Francisco Agüera Gómez. Todos los derechos reservados.[cite: 2]
+      </div>
+    </footer>
+  );
+}

@@ -1,0 +1,24 @@
+fastdental-web/
+├── public/
+│   └── Logo.png              <-- Copia aquí tu archivo Logo.png
+├── src/
+│   └── app/
+│       ├── contacto/
+│       │   └── page.tsx
+│       ├── marcas/
+│       │   └── page.tsx
+│       ├── servicios/
+│       │   └── page.tsx
+│       ├── globals.css
+│       ├── layout.tsx
+│       └── page.tsx
+│   └── components/
+│       ├── Footer.tsx
+│       ├── Header.tsx
+│       └── WhatsAppButton.tsx
+├── package.json
+├── tailwind.config.ts
+├── postcss.config.js
+├── tsconfig.json
+├── next.config.mjs
+└── .gitignore
