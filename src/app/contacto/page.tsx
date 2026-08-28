@@ -15,24 +15,36 @@ export default function Contacto() {
         <div className="bg-brand-light p-8 rounded-2xl flex flex-col justify-between">
           <div>
             <div className="mb-8 flex justify-center">
-              <Image src="/Logo.png" alt="FASTDENTAL Logo" width={220} height={60} className="h-16 w-auto" />
+              <Image src="/Logo.png" alt="FASTDENTAL Logo" width={240} height={70} className="h-20 w-auto object-contain" />
             </div>
             <div className="space-y-6">
               <div>
-                <p className="font-bold text-xs text-brand-mint uppercase tracking-wider mb-1">📱 Móvil / WhatsApp</p>
+                <div className="flex items-center gap-2 mb-1">
+                  <Image src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Móvil" width={16} height={16} className="w-4 h-4 object-contain" />
+                  <p className="font-bold text-xs text-brand-mint uppercase tracking-wider">Móvil / WhatsApp</p>
+                </div>
                 <a href="https://wa.me/34658312752" className="text-2xl font-bold text-brand-dark hover:underline">658 312 752</a>
               </div>
               <div>
-                <p className="font-bold text-xs text-brand-mint uppercase tracking-wider mb-1">✉️ Email</p>
+                <div className="flex items-center gap-2 mb-1">
+                  <Image src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email" width={16} height={16} className="w-4 h-4 object-contain" />
+                  <p className="font-bold text-xs text-brand-mint uppercase tracking-wider">Email</p>
+                </div>
                 <a href="mailto:sat.fastdental@gmail.com" className="text-2xl font-bold text-brand-dark hover:underline">sat.fastdental@gmail.com</a>
               </div>
               <div>
-                <p className="font-bold text-xs text-brand-mint uppercase tracking-wider mb-1">⏰ Horario de Atención</p>
+                <div className="flex items-center gap-2 mb-1">
+                  <Image src="https://cdn-icons-png.flaticon.com/512/880/88036.png" alt="Horario" width={16} height={16} className="w-4 h-4 object-contain" />
+                  <p className="font-bold text-xs text-brand-mint uppercase tracking-wider">Horario de Atención</p>
+                </div>
                 <p className="text-xl font-bold text-brand-dark">De 9:00 h a 20:00 h</p>
                 <p className="text-xs text-gray-500 mt-1">(Lunes a Viernes)</p>
               </div>
               <div>
-                <p className="font-bold text-xs text-brand-mint uppercase tracking-wider mb-1">📍 Zona de cobertura</p>
+                <div className="flex items-center gap-2 mb-1">
+                  <Image src="https://img.icons8.com/color/1200/map-pin.jpg" alt="Ubicación" width={16} height={16} className="w-4 h-4 object-contain" />
+                  <p className="font-bold text-xs text-brand-mint uppercase tracking-wider">Zona de cobertura</p>
+                </div>
                 <p className="text-xl font-bold text-brand-dark">Comarca de la Selva</p>
                 <p className="text-xs text-gray-500 mt-1">(Ampliación progresiva a nuevas zonas)</p>
               </div>

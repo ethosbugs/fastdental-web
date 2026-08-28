@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Marcas() {
   const marcas = [
@@ -25,17 +26,23 @@ export default function Marcas() {
       <section className="py-12 bg-brand-light">
         <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
           <div className="p-6 bg-white rounded-xl shadow-sm">
-            <span className="text-3xl block mb-2">🎓</span>
+            <div className="w-12 h-12 mx-auto mb-2 bg-brand-light rounded-lg flex items-center justify-center p-2">
+              <Image src="https://cdn-icons-png.flaticon.com/512/2617/2617793.png" alt="Formación certificada" width={32} height={32} className="w-8 h-8 object-contain" />
+            </div>
             <h3 className="font-bold text-brand-dark">Formación certificada</h3>
             <p className="text-sm text-gray-600 mt-2">Cada marca certifica directamente al técnico que interviene sus equipos.</p>
           </div>
           <div className="p-6 bg-white rounded-xl shadow-sm">
-            <span className="text-3xl block mb-2">🔩</span>
+            <div className="w-12 h-12 mx-auto mb-2 bg-brand-light rounded-lg flex items-center justify-center p-2">
+              <Image src="https://cdn-icons-png.flaticon.com/512/7263/7263655.png" alt="Repuestos originales" width={32} height={32} className="w-8 h-8 object-contain" />
+            </div>
             <h3 className="font-bold text-brand-dark">Repuestos 100% originales</h3>
             <p className="text-sm text-gray-600 mt-2">Nada de piezas genéricas: solo componentes homologados por el fabricante.</p>
           </div>
           <div className="p-6 bg-white rounded-xl shadow-sm">
-            <span className="text-3xl block mb-2">📋</span>
+            <div className="w-12 h-12 mx-auto mb-2 bg-brand-light rounded-lg flex items-center justify-center p-2">
+              <Image src="https://cdn-icons-png.flaticon.com/512/7018/7018556.png" alt="Garantía" width={32} height={32} className="w-8 h-8 object-contain" />
+            </div>
             <h3 className="font-bold text-brand-dark">Garantía de fabricante</h3>
             <p className="text-sm text-gray-600 mt-2">Las reparaciones realizadas por un SAT oficial no invalidan la garantía de tu equipo.</p>
           </div>
@@ -58,10 +65,10 @@ export default function Marcas() {
         <p className="mb-6">Contacta con nosotros para una intervención con garantía oficial.</p>
         <div className="flex justify-center gap-4">
           <Link href="/servicios" className="bg-white text-brand-dark px-6 py-3 rounded-lg font-bold">
-            ⚪ Ver servicios
+            Ver servicios
           </Link>
           <Link href="/contacto" className="bg-brand-dark text-white px-6 py-3 rounded-lg font-bold">
-            🟢 Contactar ahora
+            Contactar ahora
           </Link>
         </div>
       </section>

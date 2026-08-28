@@ -6,7 +6,13 @@ export default function Footer() {
     <footer className="bg-brand-dark text-white pt-12 pb-6">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
         <div>
-          <Image src="/Logo.png" alt="FASTDENTAL" width={160} height={40} className="h-10 w-auto brightness-200 contrast-200 mb-4" />
+          <Image 
+            src="/Logo.png" 
+            alt="FASTDENTAL" 
+            width={240} 
+            height={70} 
+            className="h-16 w-auto brightness-200 contrast-200 mb-4 object-contain" 
+          />
           <p className="text-gray-300 text-sm">Servicio Técnico Oficial de Aparatología Dental</p>
         </div>
         <div>
@@ -20,9 +26,18 @@ export default function Footer() {
         </div>
         <div>
           <h4 className="font-bold text-lg mb-4 text-brand-mint">Contacto Directo</h4>
-          <p className="text-sm text-gray-300">📱 658 312 752</p>
-          <p className="text-sm text-gray-300">✉️ sat.fastdental@gmail.com</p>
-          <p className="text-sm text-gray-300">📍 Comarca de la Selva</p>
+          <p className="text-sm text-gray-300 flex items-center gap-2 mb-2">
+            <Image src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Móvil" width={16} height={16} className="w-4 h-4 object-contain brightness-0 invert" />
+            658 312 752
+          </p>
+          <p className="text-sm text-gray-300 flex items-center gap-2 mb-2">
+            <Image src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email" width={16} height={16} className="w-4 h-4 object-contain brightness-0 invert" />
+            sat.fastdental@gmail.com
+          </p>
+          <p className="text-sm text-gray-300 flex items-center gap-2">
+            <Image src="https://img.icons8.com/color/1200/map-pin.jpg" alt="Ubicación" width={16} height={16} className="w-4 h-4 object-contain" />
+            Comarca de la Selva
+          </p>
         </div>
       </div>
       <div className="border-t border-gray-700 text-center pt-6 text-xs text-gray-400">
