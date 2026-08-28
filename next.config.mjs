@@ -18,6 +18,38 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'img.icons8.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'logident.es',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.dentalcost.es',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.prod.website-files.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.vostars.eu',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.dynamiquedentaire.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.xector.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.ibb.co',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.vatech.com',
+      },
     ],
   },
 };

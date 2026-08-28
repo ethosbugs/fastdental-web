@@ -3,8 +3,15 @@ import Image from 'next/image';
 
 export default function Home() {
   const marcas = [
-    "CATTANI", "mocom", "CASTELLINI", "mectron medical technology", 
-    "FEDESA", "MORITA", "DenTwater", "Vatech", "SIGER"
+    { name: "CATTANI", logo: "https://logident.es/desinfeccion-aspiracion/319-antiespumogeno-cattani-50ui.html" },
+    { name: "mocom", logo: "http://www.dentalcost.es/img/m/113.jpg" },
+    { name: "CASTELLINI", logo: "https://cdn.prod.website-files.com/600d8e013edde5e6cb921ef8/602f85fbad61e9818441b783_Castellini_larger.png" },
+    { name: "mectron medical technology", logo: "https://www.vostars.eu/wp-content/uploads/2019/11/logo_mectron.png" },
+    { name: "FEDESA", logo: "https://www.dynamiquedentaire.com/wp-content/uploads/2018/10/logo-fedesa.png" },
+    { name: "MORITA", logo: "https://www.xector.net/img/brd/20260707389-morita.jpg" },
+    { name: "DenTwater", logo: "https://i.ibb.co/Y7S2hGpP/q7QSX.jpg" },
+    { name: "Vatech", logo: "https://www.vatech.com/files/attach/images/569/049/525/66dd325e927faa21c8e8c8f8a7f7bcc6.JPG" },
+    { name: "SIGER", logo: null }
   ];
 
   return (
@@ -48,11 +55,21 @@ export default function Home() {
         <p className="max-w-3xl mx-auto text-gray-600 mb-8 px-4 text-sm">
           No todos los técnicos pueden intervenir tu equipo con garantía de fabricante. FASTDENTAL es SAT oficial autorizado, lo que significa formación certificada, repuestos 100% originales y procedimientos homologados por cada marca.
         </p>
-        <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-4 px-4 mb-8">
+        <div className="max-w-6xl mx-auto flex flex-wrap justify-center items-center gap-6 px-4 mb-8">
           {marcas.map((marca) => (
-            <span key={marca} className="bg-white border border-gray-200 px-5 py-3 rounded-lg font-semibold text-brand-dark shadow-sm">
-              {marca}
-            </span>
+            <div key={marca.name} className="bg-white border border-gray-200 px-6 py-4 rounded-lg shadow-sm flex items-center justify-center min-w-[140px] h-20">
+              {marca.logo ? (
+                <Image 
+                  src={marca.logo} 
+                  alt={marca.name} 
+                  width={120} 
+                  height={50} 
+                  className="max-h-12 w-auto object-contain" 
+                />
+              ) : (
+                <span className="font-semibold text-brand-dark">{marca.name}</span>
+              )}
+            </div>
           ))}
         </div>
         <Link href="/marcas" className="text-brand-mint font-bold hover:underline text-lg">
@@ -138,7 +155,7 @@ export default function Home() {
                 <Image src="https://cdn-icons-png.flaticon.com/512/2617/2617793.png" alt="Técnico certificado" width={32} height={32} className="w-8 h-8 object-contain" />
               </div>
               <h3 className="font-bold text-brand-dark mb-2">Técnico certificado</h3>
-              <p className="text-sm text-gray-600">Francisco Agüera Gómez, especialista en aparatología dental con formación oficial de fabricante.[cite: 2]</p>
+              <p className="text-sm text-gray-600">Francisco Agüera Gómez, especialista en aparatología dental con formación oficial de fabricante.</p>
             </div>
             <div className="p-6 bg-white rounded-xl shadow-sm">
               <div className="w-12 h-12 mb-3 bg-brand-light rounded-lg flex items-center justify-center p-2">
