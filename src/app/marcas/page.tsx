@@ -3,15 +3,15 @@ import Image from 'next/image';
 
 export default function Marcas() {
   const marcas = [
-    { name: "CATTANI", desc: "Sistemas de aspiración y compresores", logo: "https://logident.es/desinfeccion-aspiracion/319-antiespumogeno-cattani-50ui.html" },
-    { name: "mocom", desc: "Esterilización y autoclaves", logo: "http://www.dentalcost.es/img/m/113.jpg" },
-    { name: "CASTELLINI", desc: "Unidades de tratamiento y sillones", logo: "https://cdn.prod.website-files.com/600d8e013edde5e6cb921ef8/602f85fbad61e9818441b783_Castellini_larger.png" },
+    { name: "CATTANI", desc: "Sistemas de aspiración y compresores", logo: "https://i.ibb.co/R4ZyYGHP/logo-cattani-2x.png" },
+    { name: "mocom", desc: "Esterilización y autoclaves", logo: "https://i.ibb.co/1fF33r40/logo-mocom-3.png" },
+    { name: "CASTELLINI", desc: "Unidades de tratamiento y sillones", logo: "https://i.ibb.co/mVPQRZCr/Captura-de-pantalla-2026-08-28-222335.png" },
     { name: "mectron medical technology", desc: "Piezoelectricidad y cirugía dental", logo: "https://www.vostars.eu/wp-content/uploads/2019/11/logo_mectron.png" },
     { name: "FEDESA", desc: "Sillones y equipos dentales", logo: "https://www.dynamiquedentaire.com/wp-content/uploads/2018/10/logo-fedesa.png" },
-    { name: "MORITA", desc: "Aparatología y diagnóstico", logo: "https://www.xector.net/img/brd/20260707389-morita.jpg" },
+    { name: "MORITA", desc: "Aparatología y diagnóstico", logo: "https://i.ibb.co/Mxndjf5S/Captura-de-pantalla-2026-08-28-222657.png" },
     { name: "DenTwater", desc: "Generadores de agua tratada", logo: "https://i.ibb.co/Y7S2hGpP/q7QSX.jpg" },
-    { name: "Vatech", desc: "Radiología digital panorámica y 3D", logo: "https://www.vatech.com/files/attach/images/569/049/525/66dd325e927faa21c8e8c8f8a7f7bcc6.JPG" },
-    { name: "SIGER", desc: "Equipos de radiología y sillones", logo: null }
+    { name: "Vatech", desc: "Radiología digital panorámica y 3D", logo: "https://i.ibb.co/5XHKcYf2/Captura-de-pantalla-2026-08-28-222135.png" },
+    { name: "SIGER", desc: "Equipos de radiología y sillones", logo: "https://i.ibb.co/mCWbVnSD/image.jpg" }
   ];
 
   return (
@@ -54,11 +54,7 @@ export default function Marcas() {
           {marcas.map((m, index) => (
             <div key={index} className="p-8 border border-gray-200 rounded-xl text-center hover:border-brand-mint transition-colors bg-white flex flex-col items-center justify-between">
               <div className="h-24 w-full flex items-center justify-center mb-4">
-                {m.logo ? (
-                  <Image src={m.logo} alt={m.name} width={160} height={70} className="max-h-20 w-auto object-contain" />
-                ) : (
-                  <h3 className="text-2xl font-extrabold text-brand-dark">{m.name}</h3>
-                )}
+                <Image src={m.logo} alt={m.name} width={160} height={70} className="max-h-20 w-auto object-contain" />
               </div>
               <p className="text-sm text-gray-500">{m.desc}</p>
             </div>

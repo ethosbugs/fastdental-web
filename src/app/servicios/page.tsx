@@ -71,7 +71,7 @@ export default function Servicios() {
         <h3 className="text-2xl font-bold text-brand-dark mb-2">¿No ves tu equipo en la lista? Contáctanos igualmente.</h3>
         <p className="text-gray-600 mb-6">Trabajamos con múltiples marcas y modelos. Cuéntanos tu caso y te decimos si podemos ayudarte.</p>
         <a href="https://wa.me/34658312752" className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white px-8 py-3 rounded-xl font-bold">
-          <Image src="https://www.freeiconspng.com/uploads/whatsapp-icon-png-13.png" alt="WhatsApp" width={20} height={20} className="w-5 h-5 object-contain" />
+          <Image src="https://www.freeiconspng.com/uploads/whatsapp-icon-png-13.png" alt="WhatsApp" width={28} height={28} className="w-7 h-7 object-contain" />
           Consultar por WhatsApp
         </a>
       </section>

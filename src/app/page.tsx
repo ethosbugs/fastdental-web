@@ -3,15 +3,15 @@ import Image from 'next/image';
 
 export default function Home() {
   const marcas = [
-    { name: "CATTANI", logo: "https://logident.es/desinfeccion-aspiracion/319-antiespumogeno-cattani-50ui.html" },
-    { name: "mocom", logo: "http://www.dentalcost.es/img/m/113.jpg" },
-    { name: "CASTELLINI", logo: "https://cdn.prod.website-files.com/600d8e013edde5e6cb921ef8/602f85fbad61e9818441b783_Castellini_larger.png" },
+    { name: "CATTANI", logo: "https://i.ibb.co/R4ZyYGHP/logo-cattani-2x.png" },
+    { name: "mocom", logo: "https://i.ibb.co/1fF33r40/logo-mocom-3.png" },
+    { name: "CASTELLINI", logo: "https://i.ibb.co/mVPQRZCr/Captura-de-pantalla-2026-08-28-222335.png" },
     { name: "mectron medical technology", logo: "https://www.vostars.eu/wp-content/uploads/2019/11/logo_mectron.png" },
     { name: "FEDESA", logo: "https://www.dynamiquedentaire.com/wp-content/uploads/2018/10/logo-fedesa.png" },
-    { name: "MORITA", logo: "https://www.xector.net/img/brd/20260707389-morita.jpg" },
+    { name: "MORITA", logo: "https://i.ibb.co/Mxndjf5S/Captura-de-pantalla-2026-08-28-222657.png" },
     { name: "DenTwater", logo: "https://i.ibb.co/Y7S2hGpP/q7QSX.jpg" },
-    { name: "Vatech", logo: "https://www.vatech.com/files/attach/images/569/049/525/66dd325e927faa21c8e8c8f8a7f7bcc6.JPG" },
-    { name: "SIGER", logo: null }
+    { name: "Vatech", logo: "https://i.ibb.co/5XHKcYf2/Captura-de-pantalla-2026-08-28-222135.png" },
+    { name: "SIGER", logo: "https://i.ibb.co/mCWbVnSD/image.jpg" }
   ];
 
   return (
@@ -32,14 +32,14 @@ export default function Home() {
               rel="noopener noreferrer"
               className="bg-[#25D366] text-white px-8 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
             >
-              <Image src="https://www.freeiconspng.com/uploads/whatsapp-icon-png-13.png" alt="WhatsApp" width={24} height={24} className="w-6 h-6 object-contain" />
+              <Image src="https://www.freeiconspng.com/uploads/whatsapp-icon-png-13.png" alt="WhatsApp" width={32} height={32} className="w-8 h-8 object-contain" />
               Escribir por WhatsApp
             </a>
             <a 
               href="tel:658312752" 
               className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-brand-dark transition-colors flex items-center justify-center gap-2"
             >
-              <Image src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Teléfono" width={24} height={24} className="w-6 h-6 object-contain brightness-0 invert" />
+              <Image src="https://cdn-icons-png.flaticon.com/512/159/159684.png" alt="Teléfono" width={24} height={24} className="w-6 h-6 object-contain brightness-0 invert" />
               Llamar ahora: 658 312 752
             </a>
           </div>
@@ -58,17 +58,13 @@ export default function Home() {
         <div className="max-w-6xl mx-auto flex flex-wrap justify-center items-center gap-6 px-4 mb-8">
           {marcas.map((marca) => (
             <div key={marca.name} className="bg-white border border-gray-200 px-6 py-4 rounded-lg shadow-sm flex items-center justify-center min-w-[140px] h-20">
-              {marca.logo ? (
-                <Image 
-                  src={marca.logo} 
-                  alt={marca.name} 
-                  width={120} 
-                  height={50} 
-                  className="max-h-12 w-auto object-contain" 
-                />
-              ) : (
-                <span className="font-semibold text-brand-dark">{marca.name}</span>
-              )}
+              <Image 
+                src={marca.logo} 
+                alt={marca.name} 
+                width={120} 
+                height={50} 
+                className="max-h-12 w-auto object-contain" 
+              />
             </div>
           ))}
         </div>
@@ -213,7 +209,7 @@ export default function Home() {
           <p className="mb-8 text-lg">Contacta ahora y te confirmamos disponibilidad en el mismo día.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a href="https://wa.me/34658312752" className="bg-[#25D366] text-white px-8 py-4 rounded-xl font-bold text-lg hover:opacity-90 flex items-center justify-center gap-2">
-              <Image src="https://www.freeiconspng.com/uploads/whatsapp-icon-png-13.png" alt="WhatsApp" width={24} height={24} className="w-6 h-6 object-contain" />
+              <Image src="https://www.freeiconspng.com/uploads/whatsapp-icon-png-13.png" alt="WhatsApp" width={32} height={32} className="w-8 h-8 object-contain" />
               Escribir por WhatsApp
             </a>
             <Link href="/contacto" className="bg-white text-brand-dark px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 flex items-center justify-center gap-2">

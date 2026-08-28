@@ -15,12 +15,12 @@ export default function Contacto() {
         <div className="bg-brand-light p-8 rounded-2xl flex flex-col justify-between">
           <div>
             <div className="mb-8 flex justify-center">
-              <Image src="/Logo.png" alt="FASTDENTAL Logo" width={360} height={105} className="h-32 w-auto object-contain" />
+              <Image src="/Logo.png" alt="FASTDENTAL Logo" width={468} height={136} className="h-40 w-auto object-contain" />
             </div>
             <div className="space-y-6">
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <Image src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Móvil" width={16} height={16} className="w-4 h-4 object-contain" />
+                  <Image src="https://cdn-icons-png.flaticon.com/512/159/159684.png" alt="Móvil" width={16} height={16} className="w-4 h-4 object-contain" />
                   <p className="font-bold text-xs text-brand-mint uppercase tracking-wider">Móvil / WhatsApp</p>
                 </div>
                 <a href="https://wa.me/34658312752" className="text-2xl font-bold text-brand-dark hover:underline">658 312 752</a>
