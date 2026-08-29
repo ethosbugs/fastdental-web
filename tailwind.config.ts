@@ -10,10 +10,15 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          mint: "#66C0B7",
-          dark: "#616365",
+          mint: "#4FA89D",
+          dark: "#12181C",
           light: "#F4F9F8",
         },
+      },
+      fontFamily: {
+        display: ["var(--font-display)", "sans-serif"],
+        body: ["var(--font-body)", "sans-serif"],
+        mono: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
       },
     },
   },
