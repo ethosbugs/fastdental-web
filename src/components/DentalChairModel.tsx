@@ -1,11 +1,17 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export default function DentalChairModel() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   useEffect(() => {
-    // Carga el visor 3D oficial de Google sin dependencias pesadas
-    import('@google/model-viewer');
+    // Carga el script de Google Model Viewer desde CDN
+    const script = document.createElement('script');
+    script.type = 'module';
+    script.src = 'https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js';
+    script.onload = () => setIsLoaded(true);
+    document.head.appendChild(script);
   }, []);
 
   return (
