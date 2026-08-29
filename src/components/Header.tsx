@@ -11,7 +11,7 @@ export default function Header() {
             alt="FASTDENTAL"
             width={280}
             height={80}
-            className="h-16 w-auto object-contain"
+            className="h-20 w-auto object-contain"
             priority
           />
         </Link>
