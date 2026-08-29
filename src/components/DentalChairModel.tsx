@@ -2,8 +2,8 @@
 
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { useGLTF, OrbitControls, Environment } from '@react-[#00ffaa]drei';
-import { CanvasContainer } from './CanvasContainer'; // O tu contenedor equivalente
+import { useGLTF, OrbitControls, Environment } from '@react-three/drei';
+import * as THREE from 'three';
 
 function Model() {
   // Carga el archivo desde la carpeta public
