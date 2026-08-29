@@ -21,7 +21,7 @@ const pasos = [
   },
   {
     id: 3,
-    title: "03. Pedales y Unidades de Control",
+    title: "03. Pedales e Unidades de Control",
     sub: "SAT-03 · Electrónica Placa Base",
     desc: "Reparación de potenciómetros de pedal, chequeo de señales digitales de control y actualización de micromotores elécricos.",
     orbit: "180deg 85deg 2.5m",
