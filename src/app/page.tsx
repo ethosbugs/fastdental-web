@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import DentalChairScrollytelling from '@/components/DentalChairScrollytelling';
+// IMPORTACIÓN DEL NUEVO MODELO DEL SILLÓN DENTAL
+import DentalChairModel from '@/components/DentalChairModel';
 
 const marcas = [
   { name: "CATTANI", logo: "https://i.ibb.co/R4ZyYGHP/logo-cattani-2x.png" },
@@ -78,8 +79,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ANIMACIÓN 3D CON SCROLL */}
-      <DentalChairScrollytelling />
+      {/* MODELO 3D INTERACTIVO DEL SILLÓN DENTAL */}
+      <section className="py-12 bg-slate-950 px-4">
+        <div className="max-w-5xl mx-auto">
+          <DentalChairModel />
+        </div>
+      </section>
 
       {/* MARCAS */}
       <section className="py-16 bg-brand-light text-center">
