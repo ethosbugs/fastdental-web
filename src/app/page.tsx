@@ -1,7 +1,16 @@
 import Link from 'next/link';
 import Image from 'next/image';
-// IMPORTACIÓN DEL NUEVO MODELO DEL SILLÓN DENTAL
-import DentalChairModel from '@/components/DentalChairModel';
+import dynamic from 'next/dynamic';
+
+// Carga dinámica para evitar errores de compilación en el servidor (SSR: false)
+const DentalChairModel = dynamic(() => import('@/components/DentalChairModel'), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-[500px] bg-slate-900 rounded-xl flex items-center justify-center text-gray-400 font-mono">
+      Cargando visor 3D...
+    </div>
+  ),
+});
 
 const marcas = [
   { name: "CATTANI", logo: "https://i.ibb.co/R4ZyYGHP/logo-cattani-2x.png" },
@@ -44,7 +53,6 @@ export default function Home() {
           }}
         />
         <div className="relative max-w-5xl mx-auto text-center">
-          {/* status strip — signature element */}
           <div className="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-brand-mint border border-brand-mint/40 rounded-full px-4 py-1.5 mb-8">
             <span className="w-2 h-2 rounded-full bg-brand-mint animate-pulse" />
             SAT oficial · Comarca de la Selva
@@ -113,7 +121,7 @@ export default function Home() {
         </Link>
       </section>
 
-      {/* SERVICIOS — service-ticket motif */}
+      {/* SERVICIOS */}
       <section className="py-20 max-w-7xl mx-auto px-4">
         <h2 className="font-display text-3xl font-bold text-center text-brand-dark mb-14">
           ¿Qué avería o mantenimiento resolvemos?
