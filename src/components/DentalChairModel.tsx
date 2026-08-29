@@ -1,38 +1,26 @@
 'use client';
 
-import React, { useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { useGLTF, OrbitControls, Environment } from '@react-three/drei';
-import * as THREE from 'three';
-
-function Model() {
-  const { scene } = useGLTF('/sillon.glb');
-  const modelRef = useRef<THREE.Group>(null);
-
-  useFrame((_, delta) => {
-    if (modelRef.current) {
-      modelRef.current.rotation.y += delta * 0.2;
-    }
-  });
-
-  return <primitive ref={modelRef} object={scene} scale={1.5} position={[0, -1, 0]} />;
-}
+import React, { useEffect } from 'react';
 
 export default function DentalChairModel() {
+  useEffect(() => {
+    // Carga el visor 3D oficial de Google sin dependencias pesadas
+    import('@google/model-viewer');
+  }, []);
+
   return (
-    <div className="w-full h-[500px] relative bg-slate-900 rounded-xl overflow-hidden">
-      <Canvas camera={{ position: [0, 1.5, 4], fov: 45 }}>
-        <ambientLight intensity={0.8} />
-        <directionalLight position={[10, 10, 5]} intensity={1.2} />
-        <React.Suspense fallback={null}>
-          <Model />
-          <Environment preset="city" />
-        </React.Suspense>
-        <OrbitControls enableZoom={false} autoRotate={false} />
-      </Canvas>
+    <div className="w-full h-[500px] relative bg-slate-900 rounded-xl overflow-hidden flex items-center justify-center">
+      {/* @ts-ignore */}
+      <model-viewer
+        src="/sillon.glb"
+        alt="Modelo 3D Sillón Dental"
+        auto-rotate
+        camera-controls
+        shadow-intensity="1"
+        style={{ width: '100%', height: '100%', backgroundColor: '#0f172a' }}
+      >
+        {/* @ts-ignore */}
+      </model-viewer>
     </div>
   );
 }
-
-// Pre-cargar el modelo para evitar bloqueos
-useGLTF.preload('/sillon.glb');
