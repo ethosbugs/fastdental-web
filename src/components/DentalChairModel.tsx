@@ -8,22 +8,26 @@ interface ComponenteDental {
   nombre: string;
   subtitulo: string;
   descripcion: string;
-  orbit: string;   // theta phi radius, relativo al centro del modelo
-  target: string;  // punto que mira la cámara (mismo punto que el hotspot, en metros)
-  position: string; // Coordenadas X Y Z del hotspot en el espacio del modelo (metros)
+  nodo: string;     // nombre exacto del nodo/mesh en el GLB (ver build_chair2.py)
+  orbit: string;     // theta phi radius
+  target: string;    // punto que mira la cámara (centro real de la pieza, en metros)
+  position: string;  // coordenadas del hotspot (mismo punto que target)
 }
 
 /**
- * Coordenadas obtenidas midiendo directamente la geometría de sillon.glb
- * (bounding box real del modelo combinado):
- *   X: -32.56 .. 8.03   (eje doctor(-) <-> asistente/escupidera(+))
- *   Y:   0.61 .. 42.98   (altura, 0 = suelo)
- *   Z: -31.31 .. 17.68   (eje cabezal(-) <-> reposapiés(+))
- * NOTA: el .glb viene en unidades "grandes" (no metros reales de 1-2m).
- * <model-viewer> las usa tal cual, así que camera-target/orbit y los
- * hotspots deben expresarse en ese mismo rango, no en 0-1.5 como antes.
+ * Modelo: sillon_dental.glb — generado a medida (no es un asset de catálogo),
+ * por lo que cada pieza es un nodo independiente con nombre semántico y
+ * coordenadas EXACTAS conocidas de antemano (no estimadas).
+ *
+ * Sistema de coordenadas (metros, Y-up):
+ *   X: negativo = lado DOCTOR (bandeja instrumental) | positivo = lado ASISTENTE (escupidera)
+ *   Y: altura desde el suelo (0)
+ *   Z: negativo = hacia el CABEZAL | positivo = hacia el REPOSAPIÉS
+ *
+ * Bounds totales del modelo: X[-1.05, 0.84] Y[0, 1.90] Z[-0.98, 1.29]
+ * Centro total: (-0.06, 1.19, 0.00)
  */
-const CENTRO_MODELO = { x: -12.27, y: 21.8, z: -6.82 };
+const CENTRO_MODELO = { x: -0.06, y: 1.0, z: 0.0 };
 
 const componentes: ComponenteDental[] = [
   // 1. ESTRUCTURA DEL SILLÓN (MÓDULO DEL PACIENTE)
@@ -33,9 +37,10 @@ const componentes: ComponenteDental[] = [
     nombre: "Asiento y reposapiés",
     subtitulo: "Superficies acolchadas y ergonómicas",
     descripcion: "Zonas donde se sienta y recuesta el paciente, diseñadas para ofrecer máxima comodidad y soporte corporal durante el tratamiento.",
-    orbit: "20deg 70deg 55m",
-    target: "-8.7m 11.6m 3.9m",
-    position: "-8.7 11.6 3.9",
+    nodo: "asiento_reposapies",
+    orbit: "25deg 68deg 2.6m",
+    target: "0m 0.74m 0.68m",
+    position: "0 0.74 0.68",
   },
   {
     id: 2,
@@ -43,9 +48,10 @@ const componentes: ComponenteDental[] = [
     nombre: "Respaldo",
     subtitulo: "Inclinación regulable",
     descripcion: "Parte articulada que permite inclinar al paciente en distintas posiciones según las necesidades ergonómicas de la intervención.",
-    orbit: "10deg 68deg 58m",
-    target: "-2m 20m -1m",
-    position: "-2 20 -1",
+    nodo: "respaldo",
+    orbit: "15deg 65deg 2.6m",
+    target: "0m 1.21m -0.28m",
+    position: "0 1.21 -0.28",
   },
   {
     id: 3,
@@ -53,9 +59,10 @@ const componentes: ComponenteDental[] = [
     nombre: "Cabezal ajustable",
     subtitulo: "Soporte articular superior",
     descripcion: "Permite regular la altura y el ángulo de la cabeza del paciente para optimizar la visibilidad y el acceso a la cavidad bucal.",
-    orbit: "0deg 68deg 50m",
-    target: "6m 27.6m -4.1m",
-    position: "6 27.6 -4.1",
+    nodo: "cabezal",
+    orbit: "0deg 62deg 2.2m",
+    target: "0m 1.76m -0.57m",
+    position: "0 1.76 -0.57",
   },
   {
     id: 4,
@@ -63,9 +70,10 @@ const componentes: ComponenteDental[] = [
     nombre: "Reposabrazos",
     subtitulo: "Descanso y seguridad",
     descripcion: "Permiten al paciente apoyar los brazos cómodamente, reduciendo el estrés muscular y la tensión muscular durante los procedimientos.",
-    orbit: "70deg 75deg 55m",
-    target: "-7.8m 11.1m 0.6m",
-    position: "-7.8 11.1 0.6",
+    nodo: "reposabrazos",
+    orbit: "75deg 72deg 2.4m",
+    target: "0m 0.82m 0.15m",
+    position: "0 0.82 0.15",
   },
   {
     id: 5,
@@ -73,9 +81,10 @@ const componentes: ComponenteDental[] = [
     nombre: "Base y estructura de elevación",
     subtitulo: "Sistemas hidráulicos y electromecánicos",
     descripcion: "Soporte robusto anclado que aloja la motorización para subir, bajar o reclinar la unidad entera con total estabilidad.",
-    orbit: "35deg 82deg 58m",
-    target: "-10.8m 7.2m -1m",
-    position: "-10.8 7.2 -1",
+    nodo: "base_elevacion",
+    orbit: "40deg 80deg 2.6m",
+    target: "0m 0.37m 0m",
+    position: "0 0.37 0",
   },
 
   // 2. ELEMENTOS DE OPERACIÓN Y CONTROL
@@ -85,9 +94,10 @@ const componentes: ComponenteDental[] = [
     nombre: "Bandeja de instrumental",
     subtitulo: "Consola del dentista",
     descripcion: "Soporte móvil articulado que contiene la manguera y herramientas rotatorias principales (turbina, micromotor y jeringa).",
-    orbit: "-70deg 72deg 50m",
-    target: "0.9m 15.5m 9.4m",
-    position: "0.9 15.5 9.4",
+    nodo: "bandeja_instrumental",
+    orbit: "-65deg 68deg 2.2m",
+    target: "-0.79m 1.18m 0.05m",
+    position: "-0.79 1.18 0.05",
   },
   {
     id: 7,
@@ -95,9 +105,10 @@ const componentes: ComponenteDental[] = [
     nombre: "Pedal de control",
     subtitulo: "Interruptor multidireccional de pie",
     descripcion: "Permite activar el instrumental rotatorio, el flujo de agua y ajustar las posiciones del sillón manteniendo las manos estériles.",
-    orbit: "150deg 88deg 55m",
-    target: "-9m 2m 8m",
-    position: "-9 2 8",
+    nodo: "pedal_control",
+    orbit: "160deg 85deg 2.4m",
+    target: "-0.4m 0.03m 0.7m",
+    position: "-0.4 0.03 0.7",
   },
   {
     id: 8,
@@ -105,9 +116,10 @@ const componentes: ComponenteDental[] = [
     nombre: "Lámpara operatoria",
     subtitulo: "Luz de alta intensidad articulada",
     descripcion: "Iluminación enfocada orientada a la boca del paciente para garantizar una visibilidad clara, precisa y libre de sombras.",
-    orbit: "-15deg 55deg 55m",
-    target: "0.5m 34.1m -3.7m",
-    position: "0.5 34.1 -3.7",
+    nodo: "lampara_operatoria",
+    orbit: "-20deg 55deg 2.6m",
+    target: "-0.18m 0.95m -0.58m",
+    position: "-0.18 0.95 -0.58",
   },
 
   // 3. GRUPO HÍDRICO Y DE ASPIRACIÓN
@@ -117,9 +129,10 @@ const componentes: ComponenteDental[] = [
     nombre: "Escupidera / Cuspidor",
     subtitulo: "Pica de enjuague higiénica",
     descripcion: "Taza de cerámica/vidrio para el aclarado bucal del paciente, equipada con grifos automáticos para llenado y limpieza.",
-    orbit: "100deg 72deg 50m",
-    target: "3m 13m 8m",
-    position: "3 13 8",
+    nodo: "cuspidor",
+    orbit: "110deg 68deg 2.0m",
+    target: "0.57m 1.06m 0.05m",
+    position: "0.57 1.06 0.05",
   },
   {
     id: 10,
@@ -127,9 +140,10 @@ const componentes: ComponenteDental[] = [
     nombre: "Sistema de aspiración",
     subtitulo: "Cánulas y circuito de succión",
     descripcion: "Mangueras de alto volumen que absorben de forma continua el exceso de saliva, agua, sangre o restos quirúrgicos.",
-    orbit: "115deg 78deg 50m",
-    target: "-4m 10m 0m",
-    position: "-4 10 0",
+    nodo: "sistema_aspiracion",
+    orbit: "120deg 65deg 2.0m",
+    target: "0.62m 1.23m 0.37m",
+    position: "0.62 1.23 0.37",
   },
   {
     id: 11,
@@ -137,9 +151,10 @@ const componentes: ComponenteDental[] = [
     nombre: "Sistema de agua destilada",
     subtitulo: "Depósito presurizado de pureza",
     descripcion: "Tanque auxiliar de suministro continuo de agua purificada para los instrumentos rotatorios, previniendo contaminaciones.",
-    orbit: "130deg 80deg 52m",
-    target: "-4m 10m -12m",
-    position: "-4 10 -12",
+    nodo: "agua_destilada",
+    orbit: "135deg 70deg 2.0m",
+    target: "0.45m 1.47m -0.25m",
+    position: "0.45 1.47 -0.25",
   },
 
   // 4. COMPONENTES Y ACCESORIOS AUXILIARES
@@ -149,9 +164,10 @@ const componentes: ComponenteDental[] = [
     nombre: "Módulo del asistente",
     subtitulo: "Consola secundaria de apoyo",
     descripcion: "Panel articulado con mandos y mangueras independientes para el trabajo colaborativo del higienista o auxiliar dental.",
-    orbit: "95deg 68deg 50m",
-    target: "5.2m 23.1m -4.1m",
-    position: "5.2 23.1 -4.1",
+    nodo: "modulo_asistente",
+    orbit: "95deg 68deg 2.1m",
+    target: "0.58m 1.22m 0.5m",
+    position: "0.58 1.22 0.5",
   },
   {
     id: 13,
@@ -159,14 +175,15 @@ const componentes: ComponenteDental[] = [
     nombre: "Jeringa triple",
     subtitulo: "Inyector de aire, agua y spray",
     descripcion: "Dispositivo multifunción acoplado a la manguera para limpiar, refrescar y secar el campo operatorio con precisión.",
-    orbit: "-40deg 65deg 48m",
-    target: "0m 25m 0m",
-    position: "0 25 0",
+    nodo: "jeringa_triple",
+    orbit: "-55deg 65deg 1.9m",
+    target: "-0.87m 1.51m 0.02m",
+    position: "-0.87 1.51 0.02",
   },
 ];
 
 // Vista inicial: encuadre general de todo el sillón
-const ORBIT_INICIAL = "35deg 65deg 85m";
+const ORBIT_INICIAL = "35deg 65deg 3.6m";
 const TARGET_INICIAL = `${CENTRO_MODELO.x}m ${CENTRO_MODELO.y}m ${CENTRO_MODELO.z}m`;
 
 export default function DentalChairModel() {
@@ -175,7 +192,6 @@ export default function DentalChairModel() {
   const modelViewerRef = useRef<any>(null);
 
   useEffect(() => {
-    // Evita cargar el script más de una vez si el componente se remonta
     if (customElements.get('model-viewer')) {
       setModelReady(true);
       return;
@@ -193,8 +209,6 @@ export default function DentalChairModel() {
     setActiveId(comp.id);
     const viewer = modelViewerRef.current;
     if (!viewer) return;
-
-    // Mueve la cámara de forma animada al encuadre del componente
     viewer.cameraOrbit = comp.orbit;
     viewer.cameraTarget = comp.target;
   }, []);
@@ -217,23 +231,18 @@ export default function DentalChairModel() {
             // @ts-ignore
             <model-viewer
               ref={modelViewerRef}
-              src="/sillon.glb"
+              src="/sillon_dental.glb"
               alt="Modelo 3D Sillón Dental"
               camera-controls
               touch-action="pan-y"
               camera-orbit={ORBIT_INICIAL}
               camera-target={TARGET_INICIAL}
-              min-camera-orbit="auto auto 30m"
-              max-camera-orbit="auto auto 140m"
-              shadow-intensity="1.2"
+              min-camera-orbit="auto auto 1.2m"
+              max-camera-orbit="auto auto 6m"
+              shadow-intensity="1.1"
               interpolation-decay="200"
               style={{ width: '100%', height: '100%', backgroundColor: '#0f172a' }}
             >
-              {/* Un hotspot por componente. model-viewer sólo muestra el que
-                  coincide con data-visibility-attribute, así que en vez de
-                  mutar un único hotspot (que no re-renderiza fiablemente),
-                  declaramos todos y alternamos su visibilidad con la prop
-                  `slot` + el atributo `data-visible`. */}
               {componentes.map((c) => (
                 // @ts-ignore
                 <button
@@ -256,7 +265,6 @@ export default function DentalChairModel() {
             </model-viewer>
           )}
 
-          {/* Etiqueta indicadora superpuesta */}
           <div className="absolute top-4 left-4 bg-slate-900/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-slate-700/60 text-xs font-mono text-brand-mint flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-brand-mint animate-pulse" />
             Vistas de Componentes Dentales
@@ -275,7 +283,6 @@ export default function DentalChairModel() {
         {/* PANEL DE SELECCIÓN E INFORMACIÓN (Columna Derecha) */}
         <div className="lg:col-span-5 p-6 flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-slate-800/80 bg-slate-900/50">
 
-          {/* Ficha descriptiva del elemento seleccionado */}
           <div className="mb-6 bg-slate-900/80 p-5 rounded-xl border border-slate-800 min-h-[180px]">
             {compActual ? (
               <>
@@ -307,7 +314,6 @@ export default function DentalChairModel() {
             )}
           </div>
 
-          {/* Selector de componentes organizados */}
           <div className="space-y-3 max-h-[300px] overflow-y-auto pr-1 custom-scrollbar">
             <p className="text-xs font-mono text-slate-400 uppercase tracking-wider sticky top-0 bg-slate-900/95 py-1 backdrop-blur-sm z-10">
               Selecciona una parte del sillón:
