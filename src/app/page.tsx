@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import TurbineScrollytelling from '@/components/TurbineScrollytelling';
+import DentalChairScrollytelling from '@/components/DentalChairScrollytelling';
 
 const marcas = [
   { name: "CATTANI", logo: "https://i.ibb.co/R4ZyYGHP/logo-cattani-2x.png" },
@@ -79,7 +79,7 @@ export default function Home() {
       </section>
 
       {/* ANIMACIÓN 3D CON SCROLL */}
-      <TurbineScrollytelling />
+      <DentalChairScrollytelling />
 
       {/* MARCAS */}
       <section className="py-16 bg-brand-light text-center">
